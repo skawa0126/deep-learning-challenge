@@ -1,0 +1,29 @@
+**Overview of the analysis:** Create a model that can predict if applicants will be successful with their ventures.
+
+**Results:** 
+- Data Preprocessing
+  - What variable(s) are the target(s) for your model? IS_SUCCESSFUL is the target
+  - What variable(s) are the features for your model? The following are the features for the model: 
+               NAME, APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT
+  - What variable(s) should be removed from the input data because they are neither targets nor features? EIN should be removed.
+
+### Compiling, Training, and Evaluating the Model
+How many neurons, layers, and activation functions did you select for your neural network model, and why?
+- The final model used three hidden layers, 15, 30, and 45 nodes, and relu and sigmoid functions.
+
+Were you able to achieve the target model performance?
+- yes, the final model had a 75% accuracy.
+
+What steps did you take in your attempts to increase model performance?
+- In the first model, I trialed multiple combinations of nodes in 3 or 4 hidden layers:
+  - nodes to 10, 20, 30, 40 (accuracy: 72.83)
+  - nodes: 40, 20, 30, 40 (accuracy: 72.98)
+  - nodes: 10, 20, 30, 40 (accuracy: 72.66)
+  - nodes: 20, 30, 40, 50 (accuracy: 73.03)
+  - nodes: 10, 20, 30 (accuracy 73)
+  - nodes: 15, 30, 45 (accuracy 72.75)
+- In the second model, I used 4 layers using nodes 20, 30, 40, 50 and adjusted the number of classification binning to values
+  - <100 (accuracy: 72.84)
+  - <50 (accuracy: 73.1)
+
+**Summary:**  In the final model, I used the most successful node + layer combination run. What allowed the final model to achieve a greater than 75% accuracy was including and binning the NAME feature.
